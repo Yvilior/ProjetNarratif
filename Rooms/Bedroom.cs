@@ -25,7 +25,7 @@ Dans ton armoire, tu aperçois le [grenier]
                     else
                     {
                         Console.WriteLine("Tu ouvres la porte avec ta clé et tu sors de ta chambre.");
-                        Game.Finish();
+                        Game.Transition<Livingroom>();
                     }
                     break;
                 case "grenier":
