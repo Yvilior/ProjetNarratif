@@ -18,6 +18,12 @@ game.Add(new PartAndService());
 
 while (!game.IsGameOver())
 {
+    if(SecurityRoom.CounterB == 2)
+    {
+        SecurityRoom.CounterB = 0;
+        SecurityRoom.Batterie--;
+    }
+    Console.WriteLine($"Tu est a {SecurityRoom.Batterie}% de ta batterie.");
     Console.WriteLine("--");
     Console.WriteLine(game.CurrentRoomDescription);
     string? choice = Console.ReadLine()?.ToLower() ?? "";

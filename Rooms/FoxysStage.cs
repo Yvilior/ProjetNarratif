@@ -9,13 +9,25 @@ namespace ProjetNarratif.Rooms
     internal class FoxysStage : Room
     {
         internal override string CreateDescription() =>
-@"           
+@"Tu vois une petite scene cache derriere un rideau violet, un des projecteur est casse.
+Tu vois un panneau s'excusant pour l'attraction en reparation.
+tu peux [quitter] la camera a tout moment.
 ";
 
         internal override void ReceiveChoice(string choice)
         {
 
+            switch (choice)
+            {
+                case "quitter":
 
+                    Game.Transition<SecurityRoom>(); SecurityRoom.CounterB++;
+                    break;
+                default:
+                    Console.WriteLine("Commande invalide.");
+                    break;
+
+            }
 
         }
     }
