@@ -12,6 +12,7 @@ namespace ProjetNarratif.Rooms
         public static int CounterB = 0;
         public static int AM = 0;
         public static int CounterAM = 0;
+        public static bool porteG = false, porteD = false;
         internal override string CreateDescription() =>
 @"Tu est dans le poste de securite.
 A ta gauche il y a une [fenetre gauche] et une [porte gauche].
@@ -70,6 +71,40 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
 
 
                     }
+                    break;
+                case "porte gauche":
+                    if (porteG)
+                    {
+                        Console.WriteLine("Vous ouvrez la porte a votre gauche.");
+                        porteG = false;
+                        Batterie -= 2;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Vous fermez la porte a votre gauche.");
+                        porteG = true;
+                        Batterie -= 2;
+                    }
+                    break;
+                case "porte droite":
+                    if (porteD)
+                    {
+                        Console.WriteLine("Vous ouvrez la porte a votre droite.");
+                        porteD = false;
+                        Batterie -= 2;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Vous fermez la porte a votre droite.");
+                        porteD = true;
+                        Batterie -= 2;
+                    }
+                    break;
+                case "fenetre gauche":
+
+                    break;
+                case "fenetre droite":
+
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");

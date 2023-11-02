@@ -23,6 +23,11 @@ while (!game.IsGameOver())
         SecurityRoom.CounterB = 0;
         SecurityRoom.Batterie--;
     }
+    if(SecurityRoom.Batterie == 0)
+    {
+        Console.WriteLine("\n\tTu as perdu, Freddy est venu te chercher quand le generateur du restaurent s'est arrete...");
+        Game.Finish();
+    }
     Console.WriteLine($"Tu est a {SecurityRoom.Batterie}% de ta batterie.");
     Console.WriteLine("--");
     Console.WriteLine(game.CurrentRoomDescription);
