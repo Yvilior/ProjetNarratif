@@ -13,12 +13,23 @@ namespace ProjetNarratif.Rooms
         public static int AM = 0;
         public static int CounterAM = 0;
         public static bool porteG = false, porteD = false;
-        internal override string CreateDescription() =>
-@"Tu est dans le poste de securite.
+        static string cond;
+        internal override void Condition()
+        {
+
+            if (Batterie <= 100)
+            {
+                cond = @"Tu est dans le poste de securite.
 A ta gauche il y a une [fenetre gauche] et une [porte gauche].
 A ta droite il y a une [fenetre droite] et une [porte droite].
 Tu peux utiliser le [moniteur] pour regarder les cameras.
 ";
+            }
+
+
+        }
+        internal override string CreateDescription() => cond;
+
         
         internal override void ReceiveChoice(string choice)
         {
@@ -105,6 +116,9 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                     break;
                 case "fenetre droite":
 
+                    break;
+                case "secret":
+                    Batterie = 0;
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");

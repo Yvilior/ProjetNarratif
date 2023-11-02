@@ -8,10 +8,21 @@ namespace ProjetNarratif.Rooms
 {
     internal class DinnerRoom : Room
     {
-        internal override string CreateDescription() =>
-@"Tu vois une grande salle a manger ou de multiples tables, chaises, et decorations sont presents.
+        static string cond;
+        internal override void Condition()
+        {
+
+            if (SecurityRoom.Batterie <= 100)
+            {
+                cond = @"Tu vois une grande salle a manger ou de multiples tables, chaises, et decorations sont presents.
 tu peux [quitter] la camera a tout moment.
 ";
+            }
+
+
+        }
+        internal override string CreateDescription() => cond;
+
 
         internal override void ReceiveChoice(string choice)
         {

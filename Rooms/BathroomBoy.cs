@@ -9,10 +9,21 @@ namespace ProjetNarratif.Rooms
 {
     internal class BathroomBoy: Room
     {
-        internal override string CreateDescription() =>
-@"Tu vois l'entree des toilettes des garcons sombre et des eclats de mirroir sont repandu sur le sol. 
+        static string cond;
+        internal override void Condition()
+        {
+
+            if (SecurityRoom.Batterie <= 100)
+            {
+                cond = @"Tu vois l'entree des toilettes des garcons sombre et des eclats de mirroir sont repandu sur le sol. 
 tu peux [quitter] la camera a tout moment.
 ";
+            }
+
+
+        }
+        internal override string CreateDescription() => cond;
+
 
         internal override void ReceiveChoice(string choice)
         {

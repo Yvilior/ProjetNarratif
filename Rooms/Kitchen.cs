@@ -8,10 +8,21 @@ namespace ProjetNarratif.Rooms
 {
     internal class Kitchen : Room
     {
-        internal override string CreateDescription() =>
-@"La camera de la cuisine est casse.
+        static string cond;
+        internal override void Condition()
+        {
+
+            if (SecurityRoom.Batterie <= 100)
+            {
+                cond = @"La camera de la cuisine est casse.
 tu peux [quitter] la camera a tout moment.
 ";
+            }
+
+
+        }
+        internal override string CreateDescription() => cond;
+
 
         internal override void ReceiveChoice(string choice)
         {

@@ -8,10 +8,21 @@ namespace ProjetNarratif.Rooms
 {
     internal class Stage : Room
     {
-        internal override string CreateDescription() =>
-@"Tu vois une grande scene de spectacle donnant sur la salle a manger, ou trois animatroniques sont positionnes, pret a performer.
+        static string cond;
+        internal override void Condition()
+        {
+
+            if (SecurityRoom.Batterie <= 100)
+            {
+                cond = @"Tu vois une grande scene de spectacle donnant sur la salle a manger, ou trois animatroniques sont positionnes, pret a performer.
 tu peux [quitter] la camera a tout moment.
 ";
+            }
+
+
+        }
+        internal override string CreateDescription() => cond;
+
 
         internal override void ReceiveChoice(string choice)
         {
