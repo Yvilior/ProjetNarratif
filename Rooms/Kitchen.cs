@@ -18,6 +18,7 @@ namespace ProjetNarratif.Rooms
 tu peux [quitter] la camera a tout moment.
 ";
             }
+            if()
 
 
         }

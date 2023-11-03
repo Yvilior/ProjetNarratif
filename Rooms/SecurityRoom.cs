@@ -15,9 +15,9 @@ namespace ProjetNarratif.Rooms
         public static bool porteG = false, porteD = false;
         static string cond;
         public static bool isBonnie = false, isFreddy = false, isChica = false, isFoxy = false;
-        static Random random = new Random();
+        public static Random random = new Random();
         static string Jumpscare;
-        //static int NewRandom = random.Next(1, 101);
+        
         internal override void Condition()
         {
 
@@ -27,12 +27,75 @@ A ta gauche il y a une [fenetre gauche] et une [porte gauche].
 A ta droite il y a une [fenetre droite] et une [porte droite].
 Tu peux utiliser le [moniteur] pour regarder les cameras.
 ";
-            
+            //Foxy
             if(FoxysStage.isFoxy == false )
             {
                 isFoxy = true;
             }
+            //Bonnie
+            if(isBonnie == false && Stage.isBonnie == false)
+            {
+                int BonnieRandom = random.Next(1, 8);
+                if( BonnieRandom == 1 || BonnieRandom == 7)
+                {
+                    PartAndService.isBonnie = true;
+                }
+                else if( BonnieRandom == 2 || BonnieRandom == 5 || BonnieRandom == 6)
+                {
+                    DinnerRoom.isBonnie = true;
+                }
+                else if( BonnieRandom == 3)
+                {
+                    StorageRoom.isBonnie = true;
+                }
+                else if ( BonnieRandom == 4)
+                {
+                    CouloirGauche.isBonnie = true;
+                }
+            }
+            //Chica
+            if(isChica == false && Stage.isChica == false)
+            {
+                int ChicaRandom = random.Next(1, 9);
+                if (ChicaRandom == 1 || ChicaRandom == 5 || ChicaRandom == 6)
+                {
+                    DinnerRoom.isChica = true;
+                }
+                else if(ChicaRandom == 2 || ChicaRandom == 7)
+                {
+                    BathroomGirl.isChica = true;
+                }
+                else if (ChicaRandom == 3 || ChicaRandom == 8)
+                {
+                    Kitchen.isChica = true;
+                }
+                else if ( ChicaRandom == 4)
+                {
+                    CouloirDroite.isChica = true;
+                }
 
+            }
+            //Freddy
+            if(isFreddy == false && Stage.isFreddy == false)
+            {
+                int FreddyRandom = random.Next(1,10);
+                if (FreddyRandom == 1 || FreddyRandom == 5 || FreddyRandom == 6 || FreddyRandom == 9)
+                {
+                    DinnerRoom.isFreddy = true;
+                }
+                else if (FreddyRandom == 2 || FreddyRandom == 7)
+                {
+                    BathroomBoy.isFreddy = true;
+                }
+                else if (FreddyRandom == 3 || FreddyRandom == 8)
+                {
+                    Kitchen.isFreddy = true;
+                }
+                else if (FreddyRandom == 4)
+                {
+                    CouloirDroite.isFreddy = true;
+                }
+            }
 
         }
         internal override string CreateDescription() => cond;
@@ -175,6 +238,11 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                         Console.WriteLine("Vous voyez une silouhette");
                         
                     }
+                    else
+                    {
+                        Console.WriteLine("Vous voyez rien");
+
+                    }
                     break;
                 case "fenetre droite":
                     Console.WriteLine("Vous allumez la lumiere a votre droite.");
@@ -184,9 +252,21 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                         Console.WriteLine("Vous voyez une silouhette");
 
                     }
+                    else
+                    {
+                        Console.WriteLine("Vous voyez rien");
+
+                    }
                     break;
                 case "secret":
                     Batterie = 0;
+                    break;
+                case "info":
+                    Console.WriteLine($"CounterB = {CounterB}/2\nCounterAM = {CounterAM}/15");
+                    break;
+                case "bonus":
+                    Batterie = 100;
+                    CounterAM += 2;
                     break;
                 case "bonheur":
                     AM = 6;

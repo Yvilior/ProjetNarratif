@@ -12,9 +12,16 @@ namespace ProjetNarratif.Rooms
         internal override void Condition()
         {
 
-            if (SecurityRoom.Batterie <= 100)
+            if (isBonnie == false)
             {
                 cond = @"Tu vois un grand nombre de pieces detaches et de costume d'animatroniques etales sur des etageres.
+tu peux [quitter] la camera a tout moment.
+";
+            }
+            if(isBonnie == true)
+            {
+                isBonnie = false;
+                cond = @"Tu vois un grand lapin bleu qui ce chache derriere des etageres.
 tu peux [quitter] la camera a tout moment.
 ";
             }

@@ -19,7 +19,8 @@ game.Add(new PartAndService());
 while (!game.IsGameOver())
 {
     
-    Console.WriteLine($"Tu est a {SecurityRoom.Batterie}% de ta batterie.");
+    Console.WriteLine($"Tu es a {SecurityRoom.Batterie}% de ta batterie.");
+    Console.WriteLine($"Il est {SecurityRoom.AM}AM de la nuit.");
     Console.WriteLine("--");
     game.CurrentCondition();
     Console.WriteLine(game.CurrentRoomDescription);
@@ -134,6 +135,7 @@ while (!game.IsGameOver())
     if(SecurityRoom.CounterAM == 15)
     {
         SecurityRoom.AM++;
+        SecurityRoom.CounterAM = 0;
     }
     if(SecurityRoom.AM == 6)
     {

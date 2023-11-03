@@ -8,7 +8,7 @@ namespace ProjetNarratif.Rooms
 {
     internal class FoxysStage : Room
     {
-        static string cond; public static bool isBonnie = false, isFreddy = false, isChica = false, isFoxy = false;
+        static string cond; public static bool isBonnie = false, isFreddy = false, isChica = false, isFoxy = true;
         internal override void Condition()
         {
 

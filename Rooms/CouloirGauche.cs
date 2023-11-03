@@ -13,11 +13,23 @@ namespace ProjetNarratif.Rooms
         internal override void Condition()
         {
 
-            if (SecurityRoom.Batterie <= 100)
+            if (isBonnie == false)
             {
                 cond = @"Tu vois a travers la camera un couloir poussiereux et sale.
 tu peux [quitter] la camera a tout moment.
 ";
+            }
+            if (isBonnie)
+            {
+                cond = @"Tu vois a travers la camera Bonnie te fixe du regard.
+tu peux [quitter] la camera a tout moment.
+";
+                int RandomBonnie = SecurityRoom.random.Next(1,21);
+                if(RandomBonnie == 1)
+                {
+                    isBonnie = false;
+                    SecurityRoom.isBonnie = true;
+                }
             }
 
 

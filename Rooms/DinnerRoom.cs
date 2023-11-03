@@ -12,14 +12,57 @@ namespace ProjetNarratif.Rooms
         internal override void Condition()
         {
 
-            if (SecurityRoom.Batterie <= 100)
+            if (isBonnie == false && isChica == false && isFreddy == false)
             {
                 cond = @"Tu vois une grande salle a manger ou de multiples tables, chaises, et decorations sont presents.
 tu peux [quitter] la camera a tout moment.
 ";
             }
+            if (isFreddy)
+            {
+                isFreddy = false;
+                cond = @"Tu vois Freddy au fond de la salle.
+tu peux [quitter] la camera a tout moment.
+";
+            }
+            if (isChica)
+            {
+                isChica = false;
+                cond = @"Tu vois Chica devant la porte de la cuisine.
+tu peux [quitter] la camera a tout moment.
+";
+            }
+            if (isBonnie)
+            {
+                isBonnie = false;
+                cond = @"Tu vois Bonnie devant la camera qu'il fixe.
+tu peux [quitter] la camera a tout moment.
+";
 
+            }
+            if(isFreddy && isChica)
+            {
+                isFreddy = false;isChica = false;
+                cond = @"Tu vois Freddy au fond de la salle et Chica devant la porte de la cuisine.
+tu peux [quitter] la camera a tout moment.
+";
+            }
+            if(isFreddy && isBonnie)
+            {
+                isFreddy = false;isBonnie = false;
+                cond = @"Tu vois Freddy au fond de la salle et Bonnie devant la camera qu'il fixe.
+tu peux [quitter] la camera a tout moment.
+";
 
+            }
+            if(isBonnie && isChica)
+            {
+                isChica = false; isBonnie = false;
+                cond = @"Tu vois Bonnie devant la camera qu'il fixe et Chica devant la porte de la cuisine.
+tu peux [quitter] la camera a tout moment.
+";
+
+            }
         }
         internal override string CreateDescription() => cond;
 
