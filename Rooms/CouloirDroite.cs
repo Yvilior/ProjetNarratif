@@ -9,7 +9,7 @@ namespace ProjetNarratif.Rooms
 {
     internal class CouloirDroite : Room
     {
-        static string cond;
+        static string cond; public static bool isBonnie = false, isFreddy = false, isChica = false, isFoxy = false;
         internal override void Condition()
         {
 
