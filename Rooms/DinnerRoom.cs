@@ -18,46 +18,44 @@ namespace ProjetNarratif.Rooms
 tu peux [quitter] la camera a tout moment.
 ";
             }
-            if (isFreddy)
+            if (isFreddy && !isChica && !isBonnie)
             {
-                isFreddy = false;
+                
                 cond = @"Tu vois Freddy au fond de la salle.
 tu peux [quitter] la camera a tout moment.
 ";
             }
-            if (isChica)
+            if (isChica && !isBonnie && !isFreddy)
             {
-                isChica = false;
+                
                 cond = @"Tu vois Chica devant la porte de la cuisine.
 tu peux [quitter] la camera a tout moment.
 ";
             }
-            if (isBonnie)
+            if (isBonnie && !isChica && !isFreddy)
             {
-                isBonnie = false;
+                
                 cond = @"Tu vois Bonnie devant la camera qu'il fixe.
 tu peux [quitter] la camera a tout moment.
 ";
 
             }
-            if(isFreddy && isChica)
+            if(isFreddy && isChica && !isBonnie)
             {
-                isFreddy = false;isChica = false;
+                
                 cond = @"Tu vois Freddy au fond de la salle et Chica devant la porte de la cuisine.
 tu peux [quitter] la camera a tout moment.
 ";
             }
-            if(isFreddy && isBonnie)
+            if(isFreddy && isBonnie && !isChica)
             {
-                isFreddy = false;isBonnie = false;
                 cond = @"Tu vois Freddy au fond de la salle et Bonnie devant la camera qu'il fixe.
 tu peux [quitter] la camera a tout moment.
 ";
 
             }
-            if(isBonnie && isChica)
+            if(isBonnie && isChica && !isFreddy)
             {
-                isChica = false; isBonnie = false;
                 cond = @"Tu vois Bonnie devant la camera qu'il fixe et Chica devant la porte de la cuisine.
 tu peux [quitter] la camera a tout moment.
 ";

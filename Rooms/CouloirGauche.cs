@@ -27,9 +27,10 @@ tu peux [quitter] la camera a tout moment.
                 int RandomBonnie = SecurityRoom.random.Next(1,21);
                 if(RandomBonnie == 1)
                 {
-                    isBonnie = false;
+                    
                     SecurityRoom.isBonnie = true;
                 }
+                
             }
 
 

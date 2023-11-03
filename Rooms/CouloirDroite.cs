@@ -13,14 +13,44 @@ namespace ProjetNarratif.Rooms
         internal override void Condition()
         {
 
-            if (SecurityRoom.Batterie <= 100)
+            if (isFreddy == false && isChica == false)
             {
                 cond = @"Tu vois un long couloir sombre et defraichi.
 tu peux [quitter] la camera a tout moment.
 ";
             }
+            if (isFreddy && isChica == false)
+            {
+                cond = @"Tu vois un long couloir sombre et une ombre aux oreilles rondes au bout de celui-ci.
+tu peux [quitter] la camera a tout moment.
+";
+                int RandomFreddy = SecurityRoom.random.Next(1, 11);
+                if (RandomFreddy == 1)
+                {
 
+                    SecurityRoom.isFreddy = true;
+                }
+            }
+            if(isFreddy == false && isChica)
+            {
+                cond = @"Tu vois un long couloir sombre et defraichi. Tu arrives a voir le bec de Chica dans ton angle-mort.
+tu peux [quitter] la camera a tout moment.
+";
+            }
+            if(isFreddy && isChica)
+            {
 
+                cond = @"Tu vois un long couloir sombre et une ombre aux oreilles rondes au bout de celui-ci. Tu arrives a voir le bec de Chica dans ton angle-mort.
+tu peux [quitter] la camera a tout moment.
+";
+                int RandomChica = SecurityRoom.random.Next(1, 16);
+                if (RandomChica == 1)
+                {
+
+                    SecurityRoom.isChica = true;
+                }
+
+            }
         }
         internal override string CreateDescription() => cond;
 

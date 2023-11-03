@@ -32,71 +32,83 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
             {
                 isFoxy = true;
             }
-            //Bonnie
-            if(isBonnie == false && Stage.isBonnie == false)
+            int Randommouv = random.Next(1, 3);
+            if (Randommouv == 1)
             {
-                int BonnieRandom = random.Next(1, 8);
-                if( BonnieRandom == 1 || BonnieRandom == 7)
-                {
-                    PartAndService.isBonnie = true;
-                }
-                else if( BonnieRandom == 2 || BonnieRandom == 5 || BonnieRandom == 6)
-                {
-                    DinnerRoom.isBonnie = true;
-                }
-                else if( BonnieRandom == 3)
-                {
-                    StorageRoom.isBonnie = true;
-                }
-                else if ( BonnieRandom == 4)
-                {
-                    CouloirGauche.isBonnie = true;
-                }
-            }
-            //Chica
-            if(isChica == false && Stage.isChica == false)
-            {
-                int ChicaRandom = random.Next(1, 9);
-                if (ChicaRandom == 1 || ChicaRandom == 5 || ChicaRandom == 6)
-                {
-                    DinnerRoom.isChica = true;
-                }
-                else if(ChicaRandom == 2 || ChicaRandom == 7)
-                {
-                    BathroomGirl.isChica = true;
-                }
-                else if (ChicaRandom == 3 || ChicaRandom == 8)
-                {
-                    Kitchen.isChica = true;
-                }
-                else if ( ChicaRandom == 4)
-                {
-                    CouloirDroite.isChica = true;
-                }
+                DinnerRoom.isFreddy = false;DinnerRoom.isChica = false;DinnerRoom.isBonnie = false;
+                PartAndService.isBonnie = false;
+                BathroomBoy.isFreddy = false;
+                BathroomGirl.isChica = false;
+                CouloirDroite.isFreddy = false;CouloirDroite.isChica = false;
+                CouloirGauche.isBonnie = false;
+                Kitchen.isChica = false;Kitchen.isFreddy = false;
+                StorageRoom.isBonnie = false;
 
-            }
-            //Freddy
-            if(isFreddy == false && Stage.isFreddy == false)
-            {
-                int FreddyRandom = random.Next(1,10);
-                if (FreddyRandom == 1 || FreddyRandom == 5 || FreddyRandom == 6 || FreddyRandom == 9)
+                //Bonnie
+                if (isBonnie == false && Stage.isBonnie == false)
                 {
-                    DinnerRoom.isFreddy = true;
+                    int BonnieRandom = random.Next(1, 8);
+                    if (BonnieRandom == 1 || BonnieRandom == 7)
+                    {
+                        PartAndService.isBonnie = true;
+                    }
+                    else if (BonnieRandom == 2 || BonnieRandom == 5 || BonnieRandom == 6)
+                    {
+                        DinnerRoom.isBonnie = true;
+                    }
+                    else if (BonnieRandom == 3)
+                    {
+                        StorageRoom.isBonnie = true;
+                    }
+                    else if (BonnieRandom == 4)
+                    {
+                        CouloirGauche.isBonnie = true;
+                    }
                 }
-                else if (FreddyRandom == 2 || FreddyRandom == 7)
+                //Chica
+                if (isChica == false && Stage.isChica == false)
                 {
-                    BathroomBoy.isFreddy = true;
-                }
-                else if (FreddyRandom == 3 || FreddyRandom == 8)
-                {
-                    Kitchen.isFreddy = true;
-                }
-                else if (FreddyRandom == 4)
-                {
-                    CouloirDroite.isFreddy = true;
-                }
-            }
+                    int ChicaRandom = random.Next(1, 9);
+                    if (ChicaRandom == 1 || ChicaRandom == 5 || ChicaRandom == 6)
+                    {
+                        DinnerRoom.isChica = true;
+                    }
+                    else if (ChicaRandom == 2 || ChicaRandom == 7)
+                    {
+                        BathroomGirl.isChica = true;
+                    }
+                    else if (ChicaRandom == 3 || ChicaRandom == 8)
+                    {
+                        Kitchen.isChica = true;
+                    }
+                    else if (ChicaRandom == 4)
+                    {
+                        CouloirDroite.isChica = true;
+                    }
 
+                }
+                //Freddy
+                if (isFreddy == false && Stage.isFreddy == false)
+                {
+                    int FreddyRandom = random.Next(1, 10);
+                    if (FreddyRandom == 1 || FreddyRandom == 5 || FreddyRandom == 6 || FreddyRandom == 9)
+                    {
+                        DinnerRoom.isFreddy = true;
+                    }
+                    else if (FreddyRandom == 2 || FreddyRandom == 7)
+                    {
+                        BathroomBoy.isFreddy = true;
+                    }
+                    else if (FreddyRandom == 3 || FreddyRandom == 8)
+                    {
+                        Kitchen.isFreddy = true;
+                    }
+                    else if (FreddyRandom == 4)
+                    {
+                        CouloirDroite.isFreddy = true;
+                    }
+                }
+            }
         }
         internal override string CreateDescription() => cond;
 
@@ -262,7 +274,7 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                     Batterie = 0;
                     break;
                 case "info":
-                    Console.WriteLine($"CounterB = {CounterB}/2\nCounterAM = {CounterAM}/15");
+                    Console.WriteLine($"CounterB = {CounterB}/2\nCounterAM = {CounterAM}/15\nChica? {isChica}\nFreddy? {isFreddy}\nBonnie? {isBonnie}\nFoxy? {isFoxy}");
                     break;
                 case "bonus":
                     Batterie = 100;

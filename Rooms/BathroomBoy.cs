@@ -13,13 +13,19 @@ namespace ProjetNarratif.Rooms
         internal override void Condition()
         {
 
-            if (SecurityRoom.Batterie <= 100)
+            if (!isFreddy)
             {
                 cond = @"Tu vois l'entree des toilettes des garcons sombre et des eclats de mirroir sont repandu sur le sol. 
 tu peux [quitter] la camera a tout moment.
 ";
             }
+            if (isFreddy)
+            {
+                cond = @"Tu vois l'entree des toilettes des garcons sombre et des eclats de mirroir sont repandu sur le sol. Dans le reflet des eclats de mirroir tu vois Freddy t'observer. 
+tu peux [quitter] la camera a tout moment.
+";
 
+            }
 
         }
         internal override string CreateDescription() => cond;

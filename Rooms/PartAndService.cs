@@ -20,7 +20,6 @@ tu peux [quitter] la camera a tout moment.
             }
             if(isBonnie == true)
             {
-                isBonnie = false;
                 cond = @"Tu vois un grand lapin bleu qui ce chache derriere des etageres.
 tu peux [quitter] la camera a tout moment.
 ";
