@@ -131,6 +131,17 @@ while (!game.IsGameOver())
         Console.WriteLine("\n\tTu as perdu, Freddy est venu te chercher quand le generateur du restaurent s'est arrete...");
         Game.Finish();
     }
+    if(SecurityRoom.CounterAM == 15)
+    {
+        SecurityRoom.AM++;
+    }
+    if(SecurityRoom.AM == 6)
+    {
+
+        Console.WriteLine("\n\tTu as Gagne! Il est 6am! tu quitte le restaurent et demissionne!");
+        Game.Finish();
+
+    }
 }
 
 Console.WriteLine("FIN");

@@ -15,7 +15,7 @@ namespace ProjetNarratif.Rooms
         public static bool porteG = false, porteD = false;
         static string cond;
         static Random random = new Random();
-        static int NewRandom = random.Next(1, 101);
+        //static int NewRandom = random.Next(1, 101);
         internal override void Condition()
         {
 
@@ -46,35 +46,35 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                     switch (option)
                     {
                         case "couloir gauche":
-                            Game.Transition<CouloirGauche>();CounterB++;
+                            Game.Transition<CouloirGauche>();CounterB++; CounterAM++;
                             break;
                             
                         case "couloir droit":
-                            Game.Transition<CouloirDroite>(); CounterB++;
+                            Game.Transition<CouloirDroite>(); CounterB++; CounterAM++;
                             break;
                         case "toilettes fille":
-                            Game.Transition<BathroomGirl>(); CounterB++;
+                            Game.Transition<BathroomGirl>(); CounterB++; CounterAM++;
                             break;
                         case "toilettes garcon":
-                            Game.Transition<BathroomBoy>(); CounterB++;
+                            Game.Transition<BathroomBoy>(); CounterB++; CounterAM++;
                             break;
                         case "salle a manger":
-                            Game.Transition<DinnerRoom>(); CounterB++;
+                            Game.Transition<DinnerRoom>(); CounterB++; CounterAM++;
                             break;
                         case "scene de foxy":
-                            Game.Transition<FoxysStage>(); CounterB++;
+                            Game.Transition<FoxysStage>(); CounterB++; CounterAM++;
                             break;
                         case "scene principale":
-                            Game.Transition<Stage>(); CounterB++;
+                            Game.Transition<Stage>(); CounterB++; CounterAM++;
                             break;
                         case "cuisine":
-                            Game.Transition<Kitchen>(); CounterB++;
+                            Game.Transition<Kitchen>(); CounterB++; CounterAM++;
                             break;
                         case "stockage":
-                            Game.Transition<StorageRoom>(); CounterB++;
+                            Game.Transition<StorageRoom>(); CounterB++; CounterAM++;
                             break;
                         case "garage":
-                            Game.Transition<PartAndService>(); CounterB++;
+                            Game.Transition<PartAndService>(); CounterB++;CounterAM++;
                             break;
                         default:
                             Console.WriteLine("Commande invalide.");

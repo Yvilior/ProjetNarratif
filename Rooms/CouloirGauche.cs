@@ -32,7 +32,7 @@ tu peux [quitter] la camera a tout moment.
             {
                 case "quitter":
 
-                    Game.Transition<SecurityRoom>(); SecurityRoom.CounterB++;
+                    Game.Transition<SecurityRoom>(); SecurityRoom.CounterB++; SecurityRoom.CounterAM++;
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");
