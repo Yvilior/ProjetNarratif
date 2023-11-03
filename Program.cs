@@ -14,7 +14,7 @@ game.Add(new StorageRoom());
 game.Add(new FoxysStage());
 game.Add(new Kitchen());
 game.Add(new PartAndService());
-
+Console.WriteLine("\tFNAF 1\n");
 
 while (!game.IsGameOver())
 {

@@ -127,6 +127,7 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                             Console.WriteLine(Jumpscare);
                             Console.WriteLine("\n\tTu es mort...");
                             Game.Finish();
+                            Console.ReadKey();
                         }
                         else if (isFoxy && porteG == false)
                         {
@@ -134,6 +135,7 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                             Console.WriteLine(Jumpscare);
                             Console.WriteLine("\n\tTu es mort...");
                             Game.Finish();
+                            Console.ReadKey();
                         }
                         else if (isChica && porteD == false)
                         {
@@ -141,6 +143,7 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                             Console.WriteLine(Jumpscare);
                             Console.WriteLine("\n\tTu es mort...");
                             Game.Finish();
+                            Console.ReadKey();
                         }
                         else if (isFreddy && porteD == false)
                         {
@@ -148,6 +151,7 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                             Console.WriteLine(Jumpscare);
                             Console.WriteLine("\n\tTu es mort...");
                             Game.Finish();
+                            Console.ReadKey();
                         }
                         if(porteG || porteD)
                         {
@@ -286,18 +290,22 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                 case "bonnie":
                     JumpscareBonnie();
                     Console.WriteLine(Jumpscare);
+                    Console.ReadKey();
                     break;
                 case "chica":
                     JumpscareChica();
                     Console.WriteLine(Jumpscare);
+                    Console.ReadKey();
                     break;
                 case "foxy":
                     JumpscareFoxy();
                     Console.WriteLine(Jumpscare);
+                    Console.ReadKey();
                     break;
                 case "freddy":
                     JumpscareFreddy();
                     Console.WriteLine(Jumpscare);
+                    Console.ReadKey();
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");
