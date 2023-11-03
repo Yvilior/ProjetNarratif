@@ -21,6 +21,7 @@ while (!game.IsGameOver())
     
     Console.WriteLine($"Tu est a {SecurityRoom.Batterie}% de ta batterie.");
     Console.WriteLine("--");
+    game.CurrentCondition();
     Console.WriteLine(game.CurrentRoomDescription);
     string? choice = Console.ReadLine()?.ToLower() ?? "";
     Console.Clear();

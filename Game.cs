@@ -18,11 +18,10 @@ namespace ProjetNarratif
                 currentRoom = room;
             }
         }
-        internal void Condition()
-        {
-            currentRoom.Condition();
-            CheckTransition();
-        }
+        internal void CurrentCondition() => currentRoom.Condition();
+        
+            
+        
         internal string CurrentRoomDescription => currentRoom.CreateDescription();
 
         internal void ReceiveChoice(string choice)

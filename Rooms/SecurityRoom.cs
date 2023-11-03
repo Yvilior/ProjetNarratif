@@ -14,6 +14,8 @@ namespace ProjetNarratif.Rooms
         public static int CounterAM = 0;
         public static bool porteG = false, porteD = false;
         static string cond;
+        static Random random = new Random();
+        static int NewRandom = random.Next(1, 101);
         internal override void Condition()
         {
 
@@ -25,6 +27,7 @@ A ta droite il y a une [fenetre droite] et une [porte droite].
 Tu peux utiliser le [moniteur] pour regarder les cameras.
 ";
             }
+
 
 
         }
