@@ -129,7 +129,7 @@ while (!game.IsGameOver())
 (edited by Epicgamedemon)
 ";
         Console.WriteLine(jumpscare);
-        Console.WriteLine("\n\tTu as perdu, Freddy est venu te chercher quand le generateur du restaurent s'est arrete...");
+        Console.WriteLine("\n\tTu as perdu, Freddy est venu te chercher quand le generateur du restaurant s'est arrete...");
         Game.Finish();
     }
     if(SecurityRoom.CounterAM == 15)
