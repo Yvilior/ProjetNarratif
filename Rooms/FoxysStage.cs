@@ -31,7 +31,7 @@ tu peux [quitter] la camera a tout moment.
             if (SecurityRoom.AM == 2)
             {
                 isBonnie = false; isFreddy = false; isChica = false; isFoxy = true;
-                cond = @"Tu vois une petite scene cache derriere un rideau violet, un oeil, un crochet de pirate et un grande bouche ce trouve derriere le rideau entre-ouvert, un des projecteur est casse.
+                cond = @"Tu vois une petite scene cache derriere un rideau violet, un oeil, un crochet de pirate et un grande bouche ce trouve derriere le rideau entre-ouvert, un des projecteurs est casse.
 Tu vois un panneau s'excusant pour l'attraction en reparation.
 tu peux [quitter] la camera a tout moment.
 ";
@@ -47,6 +47,7 @@ tu peux [quitter] la camera a tout moment.
             if (SecurityRoom.AM == 4)
             {
                 isBonnie = false; isFreddy = false; isChica = false; isFoxy = false;
+                SecurityRoom.isFoxy = true;
                 cond = @"Tu vois une petite scene vide, un des projecteur est casse.
 Tu vois un panneau s'excusant pour l'attraction en reparation.
 tu peux [quitter] la camera a tout moment.

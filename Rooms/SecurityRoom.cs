@@ -27,11 +27,7 @@ A ta gauche il y a une [fenetre gauche] et une [porte gauche].
 A ta droite il y a une [fenetre droite] et une [porte droite].
 Tu peux utiliser le [moniteur] pour regarder les cameras.
 ";
-            //Foxy
-            if(FoxysStage.isFoxy == false )
-            {
-                isFoxy = true;
-            }
+            
             int Randommouv = random.Next(1, 3);
             if (Randommouv == 1)
             {
@@ -274,38 +270,117 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
 
                     }
                     break;
-                case "secret":
+                case "fin":
                     Batterie = 0;
+                    break;
+                case "secret foxy":
+                   isFoxy = true;
+                    break;
+                case "secret chica":
+                    isChica = true;
+                    break;
+                case "secret bonnie":
+                    isBonnie = true;
+                    break;
+                case "secret freddy":
+                    isFreddy = true;
                     break;
                 case "info":
                     Console.WriteLine($"CounterB = {CounterB}/2\nCounterAM = {CounterAM}/15\nChica? {isChica}\nFreddy? {isFreddy}\nBonnie? {isBonnie}\nFoxy? {isFoxy}");
+                    //foxy
+                    if (FoxysStage.isFoxy)
+                    {
+                        Console.WriteLine("foxy a scene de foxy");
+                    }
+                    //bonnie
+                    if (Stage.isBonnie)
+                    {
+                        Console.WriteLine("bonnie a scene");
+                    }
+                    else if (CouloirGauche.isBonnie)
+                    {
+                        Console.WriteLine("bonnie a couloir");
+                    }
+                    else if (StorageRoom.isBonnie)
+                    {
+                        Console.WriteLine("bonnie a stockage");
+                    }
+                    else if (PartAndService.isBonnie)
+                    {
+                        Console.WriteLine("bonnie a garage");
+                    }
+                    else if (DinnerRoom.isBonnie)
+                    {
+                        Console.WriteLine("bonnie a salle a manger");
+                    }
+                    //chica
+                    if (Stage.isChica)
+                    {
+                        Console.WriteLine("chica a scene");
+                    }
+                    else if (Kitchen.isChica)
+                    {
+                        Console.WriteLine("chica a cuisine");
+                    }
+                    else if (CouloirDroite.isChica)
+                    {
+                        Console.WriteLine("chica a couloir");
+                    }
+                    else if (DinnerRoom.isChica)
+                    {
+                        Console.WriteLine("chica a salle a manger");
+                    }
+                    else if (BathroomGirl.isChica)
+                    {
+                        Console.WriteLine("chica a toilettes");
+                    }
+                    //freddy
+                    if (Stage.isFreddy)
+                    {
+                        Console.WriteLine("freddy a scene");
+                    }
+                    else if (DinnerRoom.isFreddy)
+                    {
+                        Console.WriteLine("freddy a salle a manger");
+                    }
+                    else if (CouloirDroite.isFreddy)
+                    {
+                        Console.WriteLine("freddy a couloir");
+                    }
+                    else if (BathroomBoy.isFreddy)
+                    {
+                        Console.WriteLine("freddy a toilette");
+                    }
+                    else if (Kitchen.isFreddy)
+                    {
+                        Console.WriteLine("freddy a cuisine");
+                    }
                     break;
                 case "bonus":
                     Batterie = 100;
                     CounterAM += 2;
                     break;
-                case "bonheur":
+                case "passer":
+                    Batterie -= 1;
+                    CounterAM += 2;
+                    break;
+                case "6":
                     AM = 6;
                     break;
-                case "bonnie":
-                    JumpscareBonnie();
-                    Console.WriteLine(Jumpscare);
-                    Console.ReadKey();
+                case "1":
+                    AM = 1;
                     break;
-                case "chica":
-                    JumpscareChica();
-                    Console.WriteLine(Jumpscare);
-                    Console.ReadKey();
+                case "5":
+                    AM = 5;
                     break;
-                case "foxy":
-                    JumpscareFoxy();
-                    Console.WriteLine(Jumpscare);
-                    Console.ReadKey();
+                case "2":
+                    AM = 2;
                     break;
-                case "freddy":
-                    JumpscareFreddy();
-                    Console.WriteLine(Jumpscare);
-                    Console.ReadKey();
+                case "3":
+                   AM = 3;
+                    break;
+                case "4":
+                    AM = 4;
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");
