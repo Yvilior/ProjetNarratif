@@ -24,12 +24,7 @@ tu peux [quitter] la camera a tout moment.
                 cond = @"Tu vois a travers la camera Bonnie te fixe du regard.
 tu peux [quitter] la camera a tout moment.
 ";
-                int RandomBonnie = SecurityRoom.random.Next(1,21);
-                if(RandomBonnie == 1)
-                {
-                    
-                    SecurityRoom.isBonnie = true;
-                }
+                
                 
             }
 

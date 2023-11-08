@@ -47,7 +47,7 @@ tu peux [quitter] la camera a tout moment.
             if (SecurityRoom.AM == 4)
             {
                 isBonnie = false; isFreddy = false; isChica = false; isFoxy = false;
-                SecurityRoom.isFoxy = true;
+                
                 cond = @"Tu vois une petite scene vide, un des projecteur est casse.
 Tu vois un panneau s'excusant pour l'attraction en reparation.
 tu peux [quitter] la camera a tout moment.

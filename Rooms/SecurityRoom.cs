@@ -17,10 +17,58 @@ namespace ProjetNarratif.Rooms
         public static bool isBonnie = false, isFreddy = false, isChica = false, isFoxy = false;
         public static Random random = new Random();
         static string Jumpscare;
+        public static int attak = 0;
         
         internal override void Condition()
         {
-
+            if(AM == 4)
+            {
+                
+                if (attak == 0)
+                {
+                    SecurityRoom.isFoxy = true;
+                    attak ++;
+                }
+            }
+            if(AM == 1)
+            {
+                Stage.isBonnie = false;
+            }
+            if (AM == 2)
+            {
+                Stage.isChica = false;
+            }
+            if(AM == 3)
+            {
+                Stage.isFreddy = false;
+            }
+            if(CouloirGauche.isBonnie)
+            {
+                int RandomBonnie = SecurityRoom.random.Next(1, 11);
+                if (RandomBonnie == 1)
+                {
+                    isBonnie = false;
+                    SecurityRoom.isBonnie = true;
+                }
+            }
+            if(CouloirDroite.isFreddy)
+            {
+                int RandomFreddy = SecurityRoom.random.Next(1, 6);
+                if (RandomFreddy == 1)
+                {
+                    isFreddy = false;
+                    SecurityRoom.isFreddy = true;
+                }
+            }
+            if(CouloirDroite.isChica)
+            {
+                int RandomChica = SecurityRoom.random.Next(1, 9);
+                if (RandomChica == 1)
+                {
+                    isChica = false;
+                    SecurityRoom.isChica = true;
+                }
+            }
             
                 cond = @"Tu est dans le poste de securite.
 A ta gauche il y a une [fenetre gauche] et une [porte gauche].
