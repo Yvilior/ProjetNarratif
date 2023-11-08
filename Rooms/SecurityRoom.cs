@@ -333,6 +333,13 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                 case "secret freddy":
                     isFreddy = true;
                     break;
+                case "attaque gauche":
+                    CouloirGauche.isBonnie = true;
+                    break;
+                case "attaque droite":
+                    CouloirDroite.isChica = true;
+                    CouloirDroite.isFreddy = true;
+                    break;
                 case "info":
                     Console.WriteLine($"CounterB = {CounterB}/2\nCounterAM = {CounterAM}/15\nChica? {isChica}\nFreddy? {isFreddy}\nBonnie? {isBonnie}\nFoxy? {isFoxy}");
                     //foxy
