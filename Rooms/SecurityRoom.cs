@@ -160,9 +160,9 @@ namespace ProjetNarratif.Rooms
             }
             
                 cond = @"Tu est dans le poste de securite.
-A ta gauche il y a une [fenetre gauche] et une [porte gauche].
-A ta droite il y a une [fenetre droite] et une [porte droite].
-Tu peux utiliser le [moniteur] pour regarder les cameras.
+A ta gauche il y a une fenetre [fg] et une porte [pg].
+A ta droite il y a une fenetre [fd] et une porte [pd].
+Tu peux utiliser le moniteur [m] pour regarder les cameras.
 ";
             
             int Randommouv = random.Next(1, 3);
@@ -251,7 +251,7 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
             
             switch (choice)
             {
-                case "moniteur":
+                case "m":
                     if (isFreddy || isFoxy || isChica || isBonnie)
                     {
                         if (isBonnie && porteG == false)
@@ -295,39 +295,39 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                     {
 
                     
-                        Console.WriteLine("Tu inspecte les cameras:\n[couloir gauche]\n[couloir droit]\n[toilettes fille]\n[toilettes garcon]\n[salle a manger]\n[scene de foxy]\n[scene principale]\n[cuisine]\n[stockage]\n[garage]\n");
+                        Console.WriteLine("Tu inspecte les cameras:\ncouloir gauche[cg]\ncouloir droit[cd]\ntoilettes fille[tf]\ntoilettes garcon[tg]\nsalle a manger[sm]\nscene de foxy[sf]\nscene principale[sp]\ncuisine[c]\nstockage[s]\ngarage[g]\n");
                         string? option = Console.ReadLine()?.ToLower() ?? "";
                         switch (option)
                         {
-                            case "couloir gauche":
+                            case "cg":
                                 Game.Transition<CouloirGauche>(); CounterB++; CounterAM++;
                                 break;
 
-                            case "couloir droit":
+                            case "cd":
                                 Game.Transition<CouloirDroite>(); CounterB++; CounterAM++;
                                 break;
-                            case "toilettes fille":
+                            case "tf":
                                 Game.Transition<BathroomGirl>(); CounterB++; CounterAM++;
                                 break;
-                            case "toilettes garcon":
+                            case "tg":
                                 Game.Transition<BathroomBoy>(); CounterB++; CounterAM++;
                                 break;
-                            case "salle a manger":
+                            case "sm":
                                 Game.Transition<DinnerRoom>(); CounterB++; CounterAM++;
                                 break;
-                            case "scene de foxy":
+                            case "sf":
                                 Game.Transition<FoxysStage>(); CounterB++; CounterAM++;
                                 break;
-                            case "scene principale":
+                            case "sp":
                                 Game.Transition<Stage>(); CounterB++; CounterAM++;
                                 break;
-                            case "cuisine":
+                            case "c":
                                 Game.Transition<Kitchen>(); CounterB++; CounterAM++;
                                 break;
-                            case "stockage":
+                            case "s":
                                 Game.Transition<StorageRoom>(); CounterB++; CounterAM++;
                                 break;
-                            case "garage":
+                            case "g":
                                 Game.Transition<PartAndService>(); CounterB++; CounterAM++;
                                 break;
                             default:
@@ -340,7 +340,7 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                         }
                     }
                     break;
-                case "porte gauche":
+                case "pg":
                     if (porteG)
                     {
                         Console.WriteLine("Vous ouvrez la porte a votre gauche.");
@@ -360,7 +360,7 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                         }
                     }
                     break;
-                case "porte droite":
+                case "pd":
                     if (porteD)
                     {
                         Console.WriteLine("Vous ouvrez la porte a votre droite.");
@@ -379,7 +379,7 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                         }
                     }
                     break;
-                case "fenetre gauche":
+                case "fg":
                     Console.WriteLine("Vous allumez la lumiere a votre gauche.");
                     Batterie -= 2;
                     if (isBonnie)
@@ -393,7 +393,7 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
 
                     }
                     break;
-                case "fenetre droite":
+                case "fd":
                     Console.WriteLine("Vous allumez la lumiere a votre droite.");
                     Batterie -= 2;
                     if (isChica || isFreddy)
