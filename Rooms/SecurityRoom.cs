@@ -29,6 +29,10 @@ namespace ProjetNarratif.Rooms
                 {
                     Console.WriteLine("foxy a scene de foxy");
                 }
+                else if (SecurityRoom.isFoxy)
+                {
+                    Console.WriteLine("foxy a bureau");
+                }
                 //bonnie
                 if (Stage.isBonnie)
                 {
@@ -49,6 +53,10 @@ namespace ProjetNarratif.Rooms
                 else if (DinnerRoom.isBonnie)
                 {
                     Console.WriteLine("bonnie a salle a manger");
+                }
+                else if (SecurityRoom.isBonnie)
+                {
+                    Console.WriteLine("bonnie a bureau");
                 }
                 //chica
                 if (Stage.isChica)
@@ -71,6 +79,10 @@ namespace ProjetNarratif.Rooms
                 {
                     Console.WriteLine("chica a toilettes");
                 }
+                else if (SecurityRoom.isChica)
+                {
+                    Console.WriteLine("chica a bureau");
+                }
                 //freddy
                 if (Stage.isFreddy)
                 {
@@ -92,28 +104,12 @@ namespace ProjetNarratif.Rooms
                 {
                     Console.WriteLine("freddy a cuisine");
                 }
+                else if (SecurityRoom.isFreddy)
+                {
+                    Console.WriteLine("freddy a bureau");
+                }
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
             if(AM == 4)
             {
                 
