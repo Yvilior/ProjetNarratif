@@ -12,7 +12,7 @@ namespace ProjetNarratif.Rooms
         public static int CounterB = 0;
         public static int AM = 0;
         public static int CounterAM = 0;
-        public static bool porteG = false, porteD = false;
+        public static bool porteG = false, porteD = false,isInfo = false;
         static string cond;
         public static bool isBonnie = false, isFreddy = false, isChica = false, isFoxy = false;
         public static Random random = new Random();
@@ -21,6 +21,99 @@ namespace ProjetNarratif.Rooms
         
         internal override void Condition()
         {
+            if(isInfo)
+            {
+                Console.WriteLine($"CounterB = {CounterB}/2\nCounterAM = {CounterAM}/15\nChica? {isChica}\nFreddy? {isFreddy}\nBonnie? {isBonnie}\nFoxy? {isFoxy}");
+                //foxy
+                if (FoxysStage.isFoxy)
+                {
+                    Console.WriteLine("foxy a scene de foxy");
+                }
+                //bonnie
+                if (Stage.isBonnie)
+                {
+                    Console.WriteLine("bonnie a scene");
+                }
+                else if (CouloirGauche.isBonnie)
+                {
+                    Console.WriteLine("bonnie a couloir");
+                }
+                else if (StorageRoom.isBonnie)
+                {
+                    Console.WriteLine("bonnie a stockage");
+                }
+                else if (PartAndService.isBonnie)
+                {
+                    Console.WriteLine("bonnie a garage");
+                }
+                else if (DinnerRoom.isBonnie)
+                {
+                    Console.WriteLine("bonnie a salle a manger");
+                }
+                //chica
+                if (Stage.isChica)
+                {
+                    Console.WriteLine("chica a scene");
+                }
+                else if (Kitchen.isChica)
+                {
+                    Console.WriteLine("chica a cuisine");
+                }
+                else if (CouloirDroite.isChica)
+                {
+                    Console.WriteLine("chica a couloir");
+                }
+                else if (DinnerRoom.isChica)
+                {
+                    Console.WriteLine("chica a salle a manger");
+                }
+                else if (BathroomGirl.isChica)
+                {
+                    Console.WriteLine("chica a toilettes");
+                }
+                //freddy
+                if (Stage.isFreddy)
+                {
+                    Console.WriteLine("freddy a scene");
+                }
+                else if (DinnerRoom.isFreddy)
+                {
+                    Console.WriteLine("freddy a salle a manger");
+                }
+                else if (CouloirDroite.isFreddy)
+                {
+                    Console.WriteLine("freddy a couloir");
+                }
+                else if (BathroomBoy.isFreddy)
+                {
+                    Console.WriteLine("freddy a toilette");
+                }
+                else if (Kitchen.isFreddy)
+                {
+                    Console.WriteLine("freddy a cuisine");
+                }
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             if(AM == 4)
             {
                 
@@ -340,84 +433,20 @@ Tu peux utiliser le [moniteur] pour regarder les cameras.
                     CouloirDroite.isChica = true;
                     CouloirDroite.isFreddy = true;
                     break;
-                case "info":
-                    Console.WriteLine($"CounterB = {CounterB}/2\nCounterAM = {CounterAM}/15\nChica? {isChica}\nFreddy? {isFreddy}\nBonnie? {isBonnie}\nFoxy? {isFoxy}");
-                    //foxy
-                    if (FoxysStage.isFoxy)
-                    {
-                        Console.WriteLine("foxy a scene de foxy");
-                    }
-                    //bonnie
-                    if (Stage.isBonnie)
-                    {
-                        Console.WriteLine("bonnie a scene");
-                    }
-                    else if (CouloirGauche.isBonnie)
-                    {
-                        Console.WriteLine("bonnie a couloir");
-                    }
-                    else if (StorageRoom.isBonnie)
-                    {
-                        Console.WriteLine("bonnie a stockage");
-                    }
-                    else if (PartAndService.isBonnie)
-                    {
-                        Console.WriteLine("bonnie a garage");
-                    }
-                    else if (DinnerRoom.isBonnie)
-                    {
-                        Console.WriteLine("bonnie a salle a manger");
-                    }
-                    //chica
-                    if (Stage.isChica)
-                    {
-                        Console.WriteLine("chica a scene");
-                    }
-                    else if (Kitchen.isChica)
-                    {
-                        Console.WriteLine("chica a cuisine");
-                    }
-                    else if (CouloirDroite.isChica)
-                    {
-                        Console.WriteLine("chica a couloir");
-                    }
-                    else if (DinnerRoom.isChica)
-                    {
-                        Console.WriteLine("chica a salle a manger");
-                    }
-                    else if (BathroomGirl.isChica)
-                    {
-                        Console.WriteLine("chica a toilettes");
-                    }
-                    //freddy
-                    if (Stage.isFreddy)
-                    {
-                        Console.WriteLine("freddy a scene");
-                    }
-                    else if (DinnerRoom.isFreddy)
-                    {
-                        Console.WriteLine("freddy a salle a manger");
-                    }
-                    else if (CouloirDroite.isFreddy)
-                    {
-                        Console.WriteLine("freddy a couloir");
-                    }
-                    else if (BathroomBoy.isFreddy)
-                    {
-                        Console.WriteLine("freddy a toilette");
-                    }
-                    else if (Kitchen.isFreddy)
-                    {
-                        Console.WriteLine("freddy a cuisine");
-                    }
+                case "info on":
+                    isInfo = true;
+                    break;
+                case "info off":
+                    isInfo = false;
                     break;
                 case "bonus":
                     Batterie = 100;
-                    CounterAM += 2;
+                    
                     break;
                 case "passer":
-                    Batterie -= 1;
-                    CounterAM += 2;
+                    Batterie --;
+                    CounterAM ++;
+                    CounterAM ++;
                     break;
                 case "6":
                     AM = 6;
