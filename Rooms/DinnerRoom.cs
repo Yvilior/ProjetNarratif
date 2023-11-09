@@ -15,28 +15,28 @@ namespace ProjetNarratif.Rooms
             if (isBonnie == false && isChica == false && isFreddy == false)
             {
                 cond = @"Tu vois une grande salle a manger ou de multiples tables, chaises, et decorations sont presents.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (isFreddy && !isChica && !isBonnie)
             {
                 
                 cond = @"Tu vois Freddy au fond de la salle.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (isChica && !isBonnie && !isFreddy)
             {
                 
                 cond = @"Tu vois Chica devant la porte de la cuisine.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (isBonnie && !isChica && !isFreddy)
             {
                 
                 cond = @"Tu vois Bonnie devant la camera qu'il fixe.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
 
             }
@@ -44,20 +44,20 @@ tu peux [quitter] la camera a tout moment.
             {
                 
                 cond = @"Tu vois Freddy au fond de la salle et Chica devant la porte de la cuisine.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if(isFreddy && isBonnie && !isChica)
             {
                 cond = @"Tu vois Freddy au fond de la salle et Bonnie devant la camera qu'il fixe.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
 
             }
             if(isBonnie && isChica && !isFreddy)
             {
                 cond = @"Tu vois Bonnie devant la camera qu'il fixe et Chica devant la porte de la cuisine.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
 
             }
@@ -70,7 +70,7 @@ tu peux [quitter] la camera a tout moment.
 
             switch (choice)
             {
-                case "quitter":
+                case "q":
 
                     Game.Transition<SecurityRoom>(); SecurityRoom.CounterB++; SecurityRoom.CounterAM++;
                     break;

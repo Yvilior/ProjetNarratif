@@ -16,27 +16,27 @@ namespace ProjetNarratif.Rooms
             if (isFreddy == false && isChica == false)
             {
                 cond = @"Tu vois un long couloir sombre et defraichi.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (isFreddy && isChica == false)
             {
                 cond = @"Tu vois un long couloir sombre et une ombre aux oreilles rondes au bout de celui-ci.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
                
             }
             if(isFreddy == false && isChica)
             {
                 cond = @"Tu vois un long couloir sombre et defraichi. Tu arrives a voir le bec de Chica dans ton angle-mort.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if(isFreddy && isChica)
             {
 
                 cond = @"Tu vois un long couloir sombre et une ombre aux oreilles rondes au bout de celui-ci. Tu arrives a voir le bec de Chica dans ton angle-mort.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
                 
 
@@ -50,7 +50,7 @@ tu peux [quitter] la camera a tout moment.
 
             switch (choice)
             {
-                case "quitter":
+                case "q":
 
                     Game.Transition<SecurityRoom>(); SecurityRoom.CounterB++; SecurityRoom.CounterAM++;
                     break;

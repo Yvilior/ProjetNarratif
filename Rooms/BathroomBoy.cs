@@ -16,13 +16,13 @@ namespace ProjetNarratif.Rooms
             if (!isFreddy)
             {
                 cond = @"Tu vois l'entree des toilettes des garcons sombre et des eclats de mirroir sont repandu sur le sol. 
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (isFreddy)
             {
                 cond = @"Tu vois l'entree des toilettes des garcons sombre et des eclats de mirroir sont repandu sur le sol. Dans le reflet des eclats de mirroir tu vois Freddy t'observer. 
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
 
             }
@@ -36,7 +36,7 @@ tu peux [quitter] la camera a tout moment.
 
             switch (choice)
             {
-                case "quitter":
+                case "q":
 
                     Game.Transition<SecurityRoom>(); SecurityRoom.CounterB++; SecurityRoom.CounterAM++;
                     break;

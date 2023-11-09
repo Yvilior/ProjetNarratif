@@ -15,13 +15,13 @@ namespace ProjetNarratif.Rooms
             if (isBonnie == false)
             {
                 cond = @"Tu vois du materiel de nettoyage et des caisses remplis de chapeaux de fete, de petits cadeaux, etc...
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (isBonnie)
             {
                 cond = @"Tu vois Bonnie a cote d'une etagere fixant la camera juste au dessus de lui.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
 
@@ -34,7 +34,7 @@ tu peux [quitter] la camera a tout moment.
 
             switch (choice)
             {
-                case "quitter":
+                case "q":
 
                     Game.Transition<SecurityRoom>(); SecurityRoom.CounterB++; SecurityRoom.CounterAM++;
                     break;

@@ -16,14 +16,14 @@ namespace ProjetNarratif.Rooms
             if (isChica == false)
             {
                 cond = @"Tu vois l'entree des toilettes des filles, elle est parsemee de dechets en tout genre.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (isChica)
             {
                 
                 cond = @"Tu vois l'entree des toilettes des filles, Tu voix le pied de Chica cache derriere une porte.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
 
@@ -36,7 +36,7 @@ tu peux [quitter] la camera a tout moment.
 
             switch (choice)
             {
-                case "quitter":
+                case "q":
 
                     Game.Transition<SecurityRoom>(); SecurityRoom.CounterB++; SecurityRoom.CounterAM++;
                     break;

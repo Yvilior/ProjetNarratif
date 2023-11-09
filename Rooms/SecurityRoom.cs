@@ -295,7 +295,7 @@ Tu peux utiliser le moniteur [m] pour regarder les cameras.
                     {
 
                     
-                        Console.WriteLine("Tu inspecte les cameras:\ncouloir gauche[cg]\ncouloir droit[cd]\ntoilettes fille[tf]\ntoilettes garcon[tg]\nsalle a manger[sm]\nscene de foxy[sf]\nscene principale[sp]\ncuisine[c]\nstockage[s]\ngarage[g]\n");
+                        Console.WriteLine("Tu inspectes les cameras:\ncouloir gauche[cg]\ncouloir droit[cd]\ntoilettes fille[tf]\ntoilettes garcon[tg]\nsalle a manger[sm]\nscene de foxy[sf]\nscene principale[sp]\ncuisine[c]\nstockage[s]\ngarage[g]\n");
                         string? option = Console.ReadLine()?.ToLower() ?? "";
                         switch (option)
                         {

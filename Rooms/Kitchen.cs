@@ -15,25 +15,25 @@ namespace ProjetNarratif.Rooms
             if (isChica == false && isFreddy == false)
             {
                 cond = @"La camera de la cuisine est casse.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (isChica && !isFreddy)
             {
                 cond = @"La camera de la cuisine est casse. Tu entends des casseroles tombe.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (isFreddy && !isChica)
             {
                 cond = @"La camera de la cuisine est casse. Tu entends la musique iconique de Freddy.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (isFreddy && isChica)
             {
                 cond = @"La camera de la cuisine est casse. Tu entends des casseroles tombe et la musique iconique de Freddy.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
         }
@@ -45,7 +45,7 @@ tu peux [quitter] la camera a tout moment.
 
             switch (choice)
             {
-                case "quitter":
+                case "q":
 
                     Game.Transition<SecurityRoom>(); SecurityRoom.CounterB++; SecurityRoom.CounterAM++;
                     break;

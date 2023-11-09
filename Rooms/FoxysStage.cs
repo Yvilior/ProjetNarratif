@@ -17,7 +17,7 @@ namespace ProjetNarratif.Rooms
                 isBonnie = false; isFreddy = false; isChica = false; isFoxy = true;
                 cond = @"Tu vois une petite scene cache derriere un rideau violet, un des projecteur est casse.
 Tu vois un panneau s'excusant pour l'attraction en reparation.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (SecurityRoom.AM == 1)
@@ -25,7 +25,7 @@ tu peux [quitter] la camera a tout moment.
                 isBonnie = false; isFreddy = false; isChica = false; isFoxy = true;
                 cond = @"Tu vois une petite scene cache derriere un rideau violet, un oeil luisant dans le noir fixe la camera derriere le rideau entre-ouvert, un des projecteur est casse.
 Tu vois un panneau s'excusant pour l'attraction en reparation.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (SecurityRoom.AM == 2)
@@ -33,7 +33,7 @@ tu peux [quitter] la camera a tout moment.
                 isBonnie = false; isFreddy = false; isChica = false; isFoxy = true;
                 cond = @"Tu vois une petite scene cache derriere un rideau violet, un oeil, un crochet de pirate et un grande bouche ce trouve derriere le rideau entre-ouvert, un des projecteurs est casse.
 Tu vois un panneau s'excusant pour l'attraction en reparation.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (SecurityRoom.AM == 3)
@@ -41,7 +41,7 @@ tu peux [quitter] la camera a tout moment.
                 isBonnie = false; isFreddy = false; isChica = false; isFoxy = true;
                 cond = @"Tu vois une petite scene sur laquel Foxy fixe la camera, un des projecteur est casse.
 Tu vois un panneau s'excusant pour l'attraction en reparation.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (SecurityRoom.AM == 4)
@@ -50,7 +50,7 @@ tu peux [quitter] la camera a tout moment.
                 
                 cond = @"Tu vois une petite scene vide, un des projecteur est casse.
 Tu vois un panneau s'excusant pour l'attraction en reparation.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
             if (SecurityRoom.AM >= 5)
@@ -58,7 +58,7 @@ tu peux [quitter] la camera a tout moment.
                 isBonnie = false; isFreddy = false; isChica = false; isFoxy = true;
                 cond = @"Tu vois une petite scene cache derriere un rideau violet, un des projecteur est casse.
 Tu vois un panneau s'excusant pour l'attraction en reparation.
-tu peux [quitter] la camera a tout moment.
+tu peux quitter[q] la camera a tout moment.
 ";
             }
         }
@@ -73,7 +73,7 @@ tu peux [quitter] la camera a tout moment.
 
             switch (choice)
             {
-                case "quitter":
+                case "q":
 
                     Game.Transition<SecurityRoom>(); SecurityRoom.CounterB++; SecurityRoom.CounterAM++;
                     break;
