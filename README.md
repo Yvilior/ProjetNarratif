@@ -2,7 +2,7 @@
 
 Guillon Yvain
 2023-11-09
-
+Themes: nostalgie/surprise
 FNAF1
 
 le jeu est une reprise du jeu original Five Nights at Freddy's sur console et seulement avec du texte attendez vous a un jeu un peu different de l'original equivalent a la nuit 3-4 du jeu original.
