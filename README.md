@@ -31,8 +31,7 @@ Commande dev:
 	ferme les infos
 -bonus
 	remet votre batterie a 100%
--passer
-	fait perdre 1% de batterie et augmente le temps
+
 -1
 	vous amene a 1AM
 -2
