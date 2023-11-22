@@ -18,163 +18,154 @@ namespace ProjetNarratif.Rooms
         public static Random random = new Random();
         static string Jumpscare;
         public static int attak = 0;
-        
-        internal override void Condition()
+        public static void Attacke()
         {
-            if(isInfo)
+            if (isFreddy || isFoxy || isChica || isBonnie)
             {
-                Console.WriteLine($"CounterB = {CounterB}/2\nCounterAM = {CounterAM}/15\nChica? {isChica}\nFreddy? {isFreddy}\nBonnie? {isBonnie}\nFoxy? {isFoxy}");
-                //foxy
-                if (FoxysStage.isFoxy)
+                if (isBonnie && porteG == false)
                 {
-                    Console.WriteLine("foxy a scene de foxy");
+                    JumpscareBonnie();
+                    Console.WriteLine(Jumpscare);
+                    Console.WriteLine("\n\tTu es mort...");
+                    Game.Finish();
+                    Console.ReadKey();
                 }
-                else if (SecurityRoom.isFoxy)
+                else if (isFoxy && porteG == false)
                 {
-                    Console.WriteLine("foxy a bureau");
+                    JumpscareFoxy();
+                    Console.WriteLine(Jumpscare);
+                    Console.WriteLine("\n\tTu es mort...");
+                    Game.Finish();
+                    Console.ReadKey();
                 }
-                //bonnie
-                if (Stage.isBonnie)
+                else if (isChica && porteD == false)
                 {
-                    Console.WriteLine("bonnie a scene");
+                    JumpscareChica();
+                    Console.WriteLine(Jumpscare);
+                    Console.WriteLine("\n\tTu es mort...");
+                    Game.Finish();
+                    Console.ReadKey();
                 }
-                else if (CouloirGauche.isBonnie)
+                else if (isFreddy && porteD == false)
                 {
-                    Console.WriteLine("bonnie a couloir");
+                    JumpscareFreddy();
+                    Console.WriteLine(Jumpscare);
+                    Console.WriteLine("\n\tTu es mort...");
+                    Game.Finish();
+                    Console.ReadKey();
                 }
-                else if (StorageRoom.isBonnie)
+                if (porteG || porteD)
                 {
-                    Console.WriteLine("bonnie a stockage");
-                }
-                else if (PartAndService.isBonnie)
-                {
-                    Console.WriteLine("bonnie a garage");
-                }
-                else if (DinnerRoom.isBonnie)
-                {
-                    Console.WriteLine("bonnie a salle a manger");
-                }
-                else if (SecurityRoom.isBonnie)
-                {
-                    Console.WriteLine("bonnie a bureau");
-                }
-                //chica
-                if (Stage.isChica)
-                {
-                    Console.WriteLine("chica a scene");
-                }
-                else if (Kitchen.isChica)
-                {
-                    Console.WriteLine("chica a cuisine");
-                }
-                else if (CouloirDroite.isChica)
-                {
-                    Console.WriteLine("chica a couloir");
-                }
-                else if (DinnerRoom.isChica)
-                {
-                    Console.WriteLine("chica a salle a manger");
-                }
-                else if (BathroomGirl.isChica)
-                {
-                    Console.WriteLine("chica a toilettes");
-                }
-                else if (SecurityRoom.isChica)
-                {
-                    Console.WriteLine("chica a bureau");
-                }
-                //freddy
-                if (Stage.isFreddy)
-                {
-                    Console.WriteLine("freddy a scene");
-                }
-                else if (DinnerRoom.isFreddy)
-                {
-                    Console.WriteLine("freddy a salle a manger");
-                }
-                else if (CouloirDroite.isFreddy)
-                {
-                    Console.WriteLine("freddy a couloir");
-                }
-                else if (BathroomBoy.isFreddy)
-                {
-                    Console.WriteLine("freddy a toilette");
-                }
-                else if (Kitchen.isFreddy)
-                {
-                    Console.WriteLine("freddy a cuisine");
-                }
-                else if (SecurityRoom.isFreddy)
-                {
-                    Console.WriteLine("freddy a bureau");
+                    Batterie -= 2;
                 }
             }
+        }
 
-            if(AM == 4)
+
+
+
+
+        public static void Info()
+        {
+            Console.WriteLine($"CounterB = {CounterB}/2\nCounterAM = {CounterAM}/15\nChica? {isChica}\nFreddy? {isFreddy}\nBonnie? {isBonnie}\nFoxy? {isFoxy}");
+            //foxy
+            if (FoxysStage.isFoxy)
             {
-                
-                if (attak == 0)
-                {
-                    SecurityRoom.isFoxy = true;
-                    attak ++;
-                }
+                Console.WriteLine("foxy a scene de foxy");
             }
-            if(AM == 1)
+            else if (SecurityRoom.isFoxy)
             {
-                Stage.isBonnie = false;
+                Console.WriteLine("foxy a bureau");
             }
-            if (AM == 2)
+            //bonnie
+            if (Stage.isBonnie)
             {
-                Stage.isChica = false;
+                Console.WriteLine("bonnie a scene");
             }
-            if(AM == 3)
+            else if (CouloirGauche.isBonnie)
             {
-                Stage.isFreddy = false;
+                Console.WriteLine("bonnie a couloir");
             }
-            if(CouloirGauche.isBonnie)
+            else if (StorageRoom.isBonnie)
             {
-                int RandomBonnie = SecurityRoom.random.Next(1, 11);
-                if (RandomBonnie == 1)
-                {
-                    isBonnie = false;
-                    SecurityRoom.isBonnie = true;
-                }
+                Console.WriteLine("bonnie a stockage");
             }
-            if(CouloirDroite.isFreddy)
+            else if (PartAndService.isBonnie)
             {
-                int RandomFreddy = SecurityRoom.random.Next(1, 6);
-                if (RandomFreddy == 1)
-                {
-                    isFreddy = false;
-                    SecurityRoom.isFreddy = true;
-                }
+                Console.WriteLine("bonnie a garage");
             }
-            if(CouloirDroite.isChica)
+            else if (DinnerRoom.isBonnie)
             {
-                int RandomChica = SecurityRoom.random.Next(1, 9);
-                if (RandomChica == 1)
-                {
-                    isChica = false;
-                    SecurityRoom.isChica = true;
-                }
+                Console.WriteLine("bonnie a salle a manger");
             }
-            
-                cond = @"Tu est dans le poste de securite.
-A ta gauche il y a une fenetre [fg] et une porte [pg].
-A ta droite il y a une fenetre [fd] et une porte [pd].
-Tu peux utiliser le moniteur [m] pour regarder les cameras.
-";
-            
+            else if (SecurityRoom.isBonnie)
+            {
+                Console.WriteLine("bonnie a bureau");
+            }
+            //chica
+            if (Stage.isChica)
+            {
+                Console.WriteLine("chica a scene");
+            }
+            else if (Kitchen.isChica)
+            {
+                Console.WriteLine("chica a cuisine");
+            }
+            else if (CouloirDroite.isChica)
+            {
+                Console.WriteLine("chica a couloir");
+            }
+            else if (DinnerRoom.isChica)
+            {
+                Console.WriteLine("chica a salle a manger");
+            }
+            else if (BathroomGirl.isChica)
+            {
+                Console.WriteLine("chica a toilettes");
+            }
+            else if (SecurityRoom.isChica)
+            {
+                Console.WriteLine("chica a bureau");
+            }
+            //freddy
+            if (Stage.isFreddy)
+            {
+                Console.WriteLine("freddy a scene");
+            }
+            else if (DinnerRoom.isFreddy)
+            {
+                Console.WriteLine("freddy a salle a manger");
+            }
+            else if (CouloirDroite.isFreddy)
+            {
+                Console.WriteLine("freddy a couloir");
+            }
+            else if (BathroomBoy.isFreddy)
+            {
+                Console.WriteLine("freddy a toilette");
+            }
+            else if (Kitchen.isFreddy)
+            {
+                Console.WriteLine("freddy a cuisine");
+            }
+            else if (SecurityRoom.isFreddy)
+            {
+                Console.WriteLine("freddy a bureau");
+            }
+        }
+
+        public static void MouvMechant()
+        {
             int Randommouv = random.Next(1, 3);
             if (Randommouv == 1)
             {
-                DinnerRoom.isFreddy = false;DinnerRoom.isChica = false;DinnerRoom.isBonnie = false;
+                DinnerRoom.isFreddy = false; DinnerRoom.isChica = false; DinnerRoom.isBonnie = false;
                 PartAndService.isBonnie = false;
                 BathroomBoy.isFreddy = false;
                 BathroomGirl.isChica = false;
-                CouloirDroite.isFreddy = false;CouloirDroite.isChica = false;
+                CouloirDroite.isFreddy = false; CouloirDroite.isChica = false;
                 CouloirGauche.isBonnie = false;
-                Kitchen.isChica = false;Kitchen.isFreddy = false;
+                Kitchen.isChica = false; Kitchen.isFreddy = false;
                 StorageRoom.isBonnie = false;
 
                 //Bonnie
@@ -242,6 +233,74 @@ Tu peux utiliser le moniteur [m] pour regarder les cameras.
                     }
                 }
             }
+            
+
+            if (AM == 4)
+            {
+
+                if (attak == 0)
+                {
+                    SecurityRoom.isFoxy = true;
+                    attak++;
+                }
+            }
+            if (AM == 1)
+            {
+                Stage.isBonnie = false;
+            }
+            if (AM == 2)
+            {
+                Stage.isChica = false;
+            }
+            if (AM == 3)
+            {
+                Stage.isFreddy = false;
+            }
+            if (CouloirGauche.isBonnie)
+            {
+                int RandomBonnie = SecurityRoom.random.Next(1, 11);
+                if (RandomBonnie == 1)
+                {
+                    isBonnie = false;
+                    SecurityRoom.isBonnie = true;
+                }
+            }
+            if (CouloirDroite.isFreddy)
+            {
+                int RandomFreddy = SecurityRoom.random.Next(1, 6);
+                if (RandomFreddy == 1)
+                {
+                    isFreddy = false;
+                    SecurityRoom.isFreddy = true;
+                }
+            }
+            if (CouloirDroite.isChica)
+            {
+                int RandomChica = SecurityRoom.random.Next(1, 9);
+                if (RandomChica == 1)
+                {
+                    isChica = false;
+                    SecurityRoom.isChica = true;
+                }
+            }
+        }
+
+
+        internal override void Condition()
+        {
+            if (isInfo)
+            {
+                Info();
+            }
+
+            cond = @"Tu est dans le poste de securite.
+A ta gauche il y a une fenetre [fg] et une porte [pg].
+A ta droite il y a une fenetre [fd] et une porte [pd].
+Tu peux utiliser ton telephone [t] pour passer le temps.
+Tu peux utiliser le moniteur [m] pour regarder les cameras.
+";
+            
+            
         }
         internal override string CreateDescription() => cond;
 
@@ -252,83 +311,41 @@ Tu peux utiliser le moniteur [m] pour regarder les cameras.
             switch (choice)
             {
                 case "m":
-                    if (isFreddy || isFoxy || isChica || isBonnie)
-                    {
-                        if (isBonnie && porteG == false)
-                        {
-                            JumpscareBonnie();
-                            Console.WriteLine(Jumpscare);
-                            Console.WriteLine("\n\tTu es mort...");
-                            Game.Finish();
-                            Console.ReadKey();
-                        }
-                        else if (isFoxy && porteG == false)
-                        {
-                            JumpscareFoxy();
-                            Console.WriteLine(Jumpscare);
-                            Console.WriteLine("\n\tTu es mort...");
-                            Game.Finish();
-                            Console.ReadKey();
-                        }
-                        else if (isChica && porteD == false)
-                        {
-                            JumpscareChica();
-                            Console.WriteLine(Jumpscare);
-                            Console.WriteLine("\n\tTu es mort...");
-                            Game.Finish();
-                            Console.ReadKey();
-                        }
-                        else if (isFreddy && porteD == false)
-                        {
-                            JumpscareFreddy();
-                            Console.WriteLine(Jumpscare);
-                            Console.WriteLine("\n\tTu es mort...");
-                            Game.Finish();
-                            Console.ReadKey();
-                        }
-                        if(porteG || porteD)
-                        {
-                            Batterie -= 2;
-                        }
-                    }
-                    else
-                    {
-
-                    
+                        Attacke();
                         Console.WriteLine("Tu inspectes les cameras:\ncouloir gauche[cg]\ncouloir droit[cd]\ntoilettes fille[tf]\ntoilettes garcon[tg]\nsalle a manger[sm]\nscene de foxy[sf]\nscene principale[sp]\ncuisine[c]\nstockage[s]\ngarage[g]\n");
                         string? option = Console.ReadLine()?.ToLower() ?? "";
                         switch (option)
                         {
                             case "cg":
-                                Game.Transition<CouloirGauche>(); CounterB++; CounterAM++;
+                                Game.Transition<CouloirGauche>(); CounterB++; CounterAM++;MouvMechant();
                                 break;
 
                             case "cd":
-                                Game.Transition<CouloirDroite>(); CounterB++; CounterAM++;
+                                Game.Transition<CouloirDroite>(); CounterB++; CounterAM++;MouvMechant();
                                 break;
                             case "tf":
-                                Game.Transition<BathroomGirl>(); CounterB++; CounterAM++;
+                                Game.Transition<BathroomGirl>(); CounterB++; CounterAM++;MouvMechant();
                                 break;
                             case "tg":
-                                Game.Transition<BathroomBoy>(); CounterB++; CounterAM++;
+                                Game.Transition<BathroomBoy>(); CounterB++; CounterAM++;MouvMechant();
                                 break;
                             case "sm":
-                                Game.Transition<DinnerRoom>(); CounterB++; CounterAM++;
+                                Game.Transition<DinnerRoom>(); CounterB++; CounterAM++;MouvMechant();
                                 break;
                             case "sf":
-                                Game.Transition<FoxysStage>(); CounterB++; CounterAM++;
+                                Game.Transition<FoxysStage>(); CounterB++; CounterAM++;MouvMechant();
                                 break;
                             case "sp":
-                                Game.Transition<Stage>(); CounterB++; CounterAM++;
+                                Game.Transition<Stage>(); CounterB++; CounterAM++;MouvMechant();
                                 break;
                             case "c":
-                                Game.Transition<Kitchen>(); CounterB++; CounterAM++;
+                                Game.Transition<Kitchen>(); CounterB++; CounterAM++;MouvMechant();
                                 break;
                             case "s":
-                                Game.Transition<StorageRoom>(); CounterB++; CounterAM++;
+                                Game.Transition<StorageRoom>(); CounterB++; CounterAM++;MouvMechant();
                                 break;
                             case "g":
-                                Game.Transition<PartAndService>(); CounterB++; CounterAM++;
+                                Game.Transition<PartAndService>(); CounterB++; CounterAM++;MouvMechant();
                                 break;
                             default:
                                 Console.WriteLine("Commande invalide.");
@@ -337,7 +354,7 @@ Tu peux utiliser le moniteur [m] pour regarder les cameras.
 
 
 
-                        }
+                        
                     }
                     break;
                 case "pg":
@@ -431,6 +448,7 @@ Tu peux utiliser le moniteur [m] pour regarder les cameras.
                     break;
                 case "info on":
                     isInfo = true;
+                    Info();
                     break;
                 case "info off":
                     isInfo = false;
@@ -439,10 +457,11 @@ Tu peux utiliser le moniteur [m] pour regarder les cameras.
                     Batterie = 100;
                     
                     break;
-                case "passer":
+                case "t":
                     Batterie --;
                     CounterAM ++;
-                    CounterAM ++;
+                    MouvMechant();
+                    Attacke();
                     break;
                 case "6":
                     AM = 6;
@@ -760,7 +779,7 @@ Tu peux utiliser le moniteur [m] pour regarder les cameras.
 @@@@@@@@@@@@@@@@@@@@@@%%%%%%%%@@@@@@@@@@%%%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@";
         }
 
-
+        
 
     }
 
