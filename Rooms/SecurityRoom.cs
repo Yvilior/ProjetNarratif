@@ -167,19 +167,19 @@ namespace ProjetNarratif.Rooms
             }
             else if (AM == 2 && !am2)
             {
-                Game.Transition<BathroomGirl>(); am2 = true;
+                Game.Transition<MiniJeu2>(); am2 = true;
             }
             else if (AM == 3 && !am3)
             {
-                Game.Transition<BathroomGirl>(); am3 = true;
+                Game.Transition<MiniJeu3>(); am3 = true;
             }
             else if (AM == 4 && !am4)
             {
-                Game.Transition<BathroomGirl>(); am4 = true;
+                Game.Transition<MiniJeu4>(); am4 = true;
             }
             else if (AM == 5 && !am5)
             {
-                Game.Transition<BathroomGirl>(); am5 = true;
+                Game.Transition<MiniJeu5>(); am5 = true;
             }
 
             int Randommouv = random.Next(1, 3);
