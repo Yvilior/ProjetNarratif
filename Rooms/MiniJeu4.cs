@@ -25,12 +25,12 @@ namespace ProjetNarratif.Rooms
             Console.Write("Reponse: ");
             ans = Console.ReadLine();
             Console.Clear();
-            if (ans == "x")
+            if (ans == "")
             {
 
 
             }
-            else if (ans == "")
+            else if (ans == "x")
             {
                 Game.Transition<SecurityRoom>();
                 Console.ForegroundColor = ConsoleColor.Red;
