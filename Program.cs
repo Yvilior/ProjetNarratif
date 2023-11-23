@@ -14,6 +14,7 @@ game.Add(new StorageRoom());
 game.Add(new FoxysStage());
 game.Add(new Kitchen());
 game.Add(new PartAndService());
+game.Add(new MiniJeu1());
 Console.WriteLine("\tFNAF 1\n");
 Console.WriteLine("Tu es dans une pizzeria ou des robots (animatroniques):\n-Freddy l'ours brun,\n-Foxy le renard pirate,\n-Chica le poulet jaune,\n-Bonnie le lapin bleu\noccupe les enfants la journee.");
 Console.WriteLine("Tu es un gardien de nuit et dois surveiller les robots la nuit car ceux-ci ce deplacent et veulent te tuer.\n Le restaurant ouvre ses portes a 6AM donc tu dois survivre jusqu'au matin");

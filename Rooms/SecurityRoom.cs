@@ -18,8 +18,13 @@ namespace ProjetNarratif.Rooms
         public static Random random = new Random();
         static string Jumpscare;
         public static int attak = 0;
+        static bool am1 = false, am2 = false, am3 = false, am4 = false, am5 = false;
         public static void Attacke()
         {
+            
+            
+            
+
             if (isFreddy || isFoxy || isChica || isBonnie)
             {
                 if (isBonnie && porteG == false)
@@ -156,6 +161,27 @@ namespace ProjetNarratif.Rooms
 
         public static void MouvMechant()
         {
+            if (AM == 1 && !am1)
+            {
+                Game.Transition<MiniJeu1>(); am1 = true;
+            }
+            else if (AM == 2 && !am2)
+            {
+                Game.Transition<BathroomGirl>(); am2 = true;
+            }
+            else if (AM == 3 && !am3)
+            {
+                Game.Transition<BathroomGirl>(); am3 = true;
+            }
+            else if (AM == 4 && !am4)
+            {
+                Game.Transition<BathroomGirl>(); am4 = true;
+            }
+            else if (AM == 5 && !am5)
+            {
+                Game.Transition<BathroomGirl>(); am5 = true;
+            }
+
             int Randommouv = random.Next(1, 3);
             if (Randommouv == 1)
             {
