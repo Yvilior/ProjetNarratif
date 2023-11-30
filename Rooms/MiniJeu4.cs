@@ -20,17 +20,12 @@ namespace ProjetNarratif.Rooms
             string ans;
         p1:
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("MiniJeu en court, tapez [x]");
+            Console.WriteLine(" Tu fais un reve des plus merveilleux [m].");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Reponse: ");
             ans = Console.ReadLine();
             Console.Clear();
-            if (ans == "")
-            {
-
-
-            }
-            else if (ans == "x")
+            if (ans == "m")
             {
                 Game.Transition<SecurityRoom>();
                 Console.ForegroundColor = ConsoleColor.Red;
