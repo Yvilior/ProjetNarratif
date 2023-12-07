@@ -2,6 +2,12 @@
 
 Guillon Yvain
 2023-11-09
+code du cours: 420J17AS
+
+
+Aucun tuto ou aide pour du code dans le jeu.
+
+
 Themes: nostalgie/surprise
 FNAF1
 
