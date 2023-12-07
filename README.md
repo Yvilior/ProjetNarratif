@@ -5,7 +5,7 @@ Guillon Yvain
 code du cours: 420J17AS
 
 
-Aucun tuto ou aide pour du code dans le jeu.
+Aucun tuto ou aide pour du code dans le jeu sauf chat GPT qui m'a aider pour le random car j'ai essayer de faire du random comme on fait avec python.
 
 
 Themes: nostalgie/surprise
