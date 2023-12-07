@@ -20,10 +20,15 @@ game.Add(new MiniJeu3());
 game.Add(new MiniJeu4());
 game.Add(new MiniJeu5());
 Console.WriteLine("\tFNAF 1\n");
+Console.ForegroundColor = ConsoleColor.Green;
+Console.WriteLine("La premiere heure, aucun animatronique va ce deplacer tu peux donc apprendre les touches et\nensuite passer le temps jusqu'a la premiere heure ou la passer directement.");
+Console.ForegroundColor = ConsoleColor.White;
 Console.WriteLine("Tu es dans une pizzeria ou des robots (animatroniques):\n-Freddy l'ours brun,\n-Foxy le renard pirate,\n-Chica le poulet jaune,\n-Bonnie le lapin bleu\noccupe les enfants la journee.");
 Console.WriteLine("Tu es un gardien de nuit et dois surveiller les robots la nuit car ceux-ci ce deplacent et veulent te tuer.\n Le restaurant ouvre ses portes a 6AM donc tu dois survivre jusqu'au matin");
 Console.WriteLine("Pour ne pas perdre tu peux utiliser les portes pour les empecher d'entrer dans le poste de securite.\nil n'y a pas de camera dans le poste de securite donc tu dois alumer les lumieres \na ta gauche ou droite pour verifier s'il ne sont pas sur le point de rentrer dans le poste et te tuer.");
+Console.ForegroundColor = ConsoleColor.Red;
 Console.WriteLine("ATTENTION \nSi ta batterie tombe a 0% avant 6AM tu as perdu car tu n'aura plus d'electricite pour ferme les portes.\nN'oublie pas que les portes consomme de l'electricite quand elles sont ferme donc pense a les ouvrir.\n\n");
+Console.ForegroundColor = ConsoleColor.White;
 while (!game.IsGameOver())
 {
     

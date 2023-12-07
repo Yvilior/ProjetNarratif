@@ -318,14 +318,25 @@ namespace ProjetNarratif.Rooms
             {
                 Info();
             }
-
-            cond = @"Tu est dans le poste de securite.
+            if (AM < 1)
+            {
+                cond = @"Tu est dans le poste de securite.
+A ta gauche il y a une fenetre [fg] et une porte [pg].
+A ta droite il y a une fenetre [fd] et une porte [pd].
+Tu peux utiliser ton telephone [t] pour passer le temps.
+Tu peux utiliser le moniteur [m] pour regarder les cameras.
+Tu peux scroller sur tik tok pour passer la premiere heure [skip].
+";
+            }
+            else
+            {
+                cond = @"Tu est dans le poste de securite.
 A ta gauche il y a une fenetre [fg] et une porte [pg].
 A ta droite il y a une fenetre [fd] et une porte [pd].
 Tu peux utiliser ton telephone [t] pour passer le temps.
 Tu peux utiliser le moniteur [m] pour regarder les cameras.
 ";
-            
+            }
             
         }
         internal override string CreateDescription() => cond;
@@ -449,6 +460,19 @@ Tu peux utiliser le moniteur [m] pour regarder les cameras.
                         Console.WriteLine("Vous voyez rien");
 
                     }
+                    break;
+                case "skip":
+                    if (AM < 1) 
+                    {
+                        AM = 1; CounterAM = 0;
+                        Console.WriteLine("Tu scrolles sur tik tok jusqu'a une heure du matin.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tu ne devrais pas abuser de tik tok...");
+                    }
+
+                    
                     break;
                 case "fin":
                     Batterie = 0;
