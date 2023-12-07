@@ -19,6 +19,7 @@ game.Add(new MiniJeu2());
 game.Add(new MiniJeu3());
 game.Add(new MiniJeu4());
 game.Add(new MiniJeu5());
+game.Add(new Devinettecs());
 Console.WriteLine("\tFNAF 1\n");
 Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine("La premiere heure, aucun animatronique va ce deplacer tu peux donc apprendre les touches et\nensuite passer le temps jusqu'a la premiere heure ou la passer directement.");

@@ -326,6 +326,7 @@ A ta droite il y a une fenetre [fd] et une porte [pd].
 Tu peux utiliser ton telephone [t] pour passer le temps.
 Tu peux utiliser le moniteur [m] pour regarder les cameras.
 Tu peux scroller sur tik tok pour passer la premiere heure [skip].
+Tu peux faire des devinnettes [d].
 ";
             }
             else
@@ -413,6 +414,9 @@ Tu peux utiliser le moniteur [m] pour regarder les cameras.
                             isFoxy = false; isBonnie = false;
                         }
                     }
+                    break;
+                case "d":
+                    Game.Transition<Devinettecs>();
                     break;
                 case "pd":
                     if (porteD)
